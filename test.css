@@ -1,0 +1,41 @@
+body{
+    /*image sourced from https://www.google.com/url?sa=i&url=https%3A%2F%2Fopenweathermap.org%2F&psig=AOvVaw20P3Gfg93XrGNztO2nPhr0&ust=1585803443098000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMDXlKq4xugCFQAAAAAdAAAAABAD*/
+    background-image: url('https://wallpapercave.com/wp/wp2581365.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:100%;
+}
+
+.container{
+    /* margin-top: 2%; */
+    padding:2%;
+    width: 200cm;
+    opacity: 0.9;
+    background: #FFFFFF;
+    height:100%;
+ }
+
+
+
+    .myButton {
+        background:linear-gradient(to bottom, #768d87 5%, #0f1212 100%);
+        background-color:#768d87;
+        border-radius:5px;
+        border:1px solid #566963;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-family:Trebuchet MS;
+        font-size:12px;
+        padding:5px 10px;
+        text-decoration:none;
+    }
+    .myButton:hover {
+        background:linear-gradient(to bottom, #0f1212 5%, #768d87 100%);
+        background-color:#0f1212;
+    }
+    .myButton:active {
+        position:relative;
+        top:1px;
+    }
+    

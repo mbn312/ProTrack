@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 10%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 10px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 10% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 10%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)}
+  to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+</style>
+<link rel="stylesheet" href="test.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="login.js"></script>
+<link rel="stylesheet" type="text/css" href="login.css">
+</head>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="navbar-brand" href="index.html">Home</a>
+    </li>
+  </ul>
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+      <a class="navbar-brand" href="login.html">Login</a>
+    </li>
+    <li class="nav-item">
+      <a class="navbar-brand" href="registration.html">Sign Up</a>
+    </li>
+  </ul>
+</nav>
+
+  <body onload="onPageOpen()">
+
+  <div class="container">
+
+    <div class="jumbotron">
+      <h2 class="display-4" style="text-align:center">Registration</h2>
+    </div>
+
+    <div class="row">
+    <div class="col-lg-7">
+
+    <div>
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label" for="fullName">Full Name</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" name="fullName" id="fullName"  placeholder="Enter Name">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label" for="username">Username</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" name="username" id="username"  placeholder="Enter username">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label"  for="emailAddress">Email address</label>
+        <div class="col-sm-10">
+          <input type="email" class="form-control" name="emailAddress" id="emailAddress" placeholder="Enter email">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label"  for="phoneNumber">Phone Number</label>
+        <div class="col-sm-10">
+          <input type="tel" class="form-control" name="phoneNumber" id="phoneNumber" placeholder="Enter phone number">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label  class="col-sm-2 col-form-label" for="passwordFirst">Password</label>
+        <div class="col-sm-10">
+          <input type="password" class="form-control" id="psw" name="passwordFirst" placeholder="Password">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label  class="col-sm-2 col-form-label" for="passwordConfirm">Confirm Password</label>
+        <div class="col-sm-10">
+          <input type="password" class="form-control" id="cpsw" name="passwordConfirm" placeholder="Confirm Password">
+        </div>
+      </div>
+      <input type="submit" id="my_submit_button" value="Submit" class="btn btn-primary btn-block" disabled style="background-color:#38D6FD; color:black;" onclick="regUser()">
+    </div>
+  </div>
+    <div class="col">
+    <div id="message" style="display:block">
+      <h3>Password must contain the following:</h3>
+      <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+      <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+      <p id="number" class="invalid">A <b>number</b></p>
+      <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+      <p id="match" class="invalid">Password and Confirm Password Match</p>
+    </div>
+  </div>
+  </div>
+  </div>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  <script src="/jquery-3.5.1.min.js"></script>
+  <script src="/server_scripts.js"></script>
+  </body>
+  </html>

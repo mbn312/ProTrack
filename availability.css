@@ -1,0 +1,38 @@
+#monday_status{
+	visibility:hidden;
+	height:0px;
+}
+
+#tuesday_status{
+	visibility:hidden;
+	height:0px;
+}
+
+#wednsday_status{
+	visibility:hidden;
+	height:0px;
+}
+
+#thursday_status{
+	visibility:hidden;
+	height:0px;
+}
+
+#friday_status{
+	visibility:hidden;
+	height:0px;
+}
+
+#saturday_status{
+	visibility:hidden;
+	height:0px;
+}
+
+#sunday_status{
+	visibility:hidden;
+	height:0px;
+}
+
+.firstLabel {
+    margin-right:50px;
+}

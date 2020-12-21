@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    body {font-family: Arial, Helvetica, sans-serif;}
+
+    /* Full-width input fields */
+    input[type=text], input[type=password] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    /* Set a style for all buttons */
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+
+    /* Extra styles for the cancel button */
+    .cancelbtn {
+      width: auto;
+      padding: 10px 18px;
+      background-color: #f44336;
+    }
+
+    /* Center the image and position the close button */
+    .imgcontainer {
+      text-align: center;
+      margin: 24px 0 12px 0;
+      position: relative;
+    }
+
+    img.avatar {
+      width: 10%;
+      border-radius: 50%;
+    }
+
+    .container {
+      padding: 16px;
+    }
+
+    span.psw {
+      float: right;
+      padding-top: 16px;
+    }
+
+    /* The Modal (background) */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+      padding-top: 10px;
+    }
+
+    /* Modal Content/Box */
+    .modal-content {
+      background-color: #fefefe;
+      margin: 5% auto 10% auto; /* 5% from the top, 15% from the bottom and centered */
+      border: 1px solid #888;
+      width: 10%; /* Could be more or less, depending on screen size */
+    }
+
+    /* The Close Button (x) */
+    .close {
+      position: absolute;
+      right: 25px;
+      top: 0;
+      color: #000;
+      font-size: 35px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: red;
+      cursor: pointer;
+    }
+
+    /* Add Zoom Animation */
+    .animate {
+      -webkit-animation: animatezoom 0.6s;
+      animation: animatezoom 0.6s
+    }
+
+    @-webkit-keyframes animatezoom {
+      from {-webkit-transform: scale(0)}
+      to {-webkit-transform: scale(1)}
+    }
+
+    @keyframes animatezoom {
+      from {transform: scale(0)}
+      to {transform: scale(1)}
+    }
+
+    /* Change styles for span and cancel button on extra small screens */
+    @media screen and (max-width: 300px) {
+      span.psw {
+        display: block;
+        float: none;
+      }
+      .cancelbtn {
+        width: 100%;
+      }
+    }
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="login.js"></script>
+    <link rel="stylesheet" type="text/css" href="login.css">
+  </head>
+
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="navbar-brand" href="userhome.html">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="navbar-brand" href="projecthome.html">Project Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="navbar-brand" href="taskcreator.html">Create Task</a>
+      </li>
+    </ul>
+      <ul class="navbar-nav ml-auto">
+<li class="nav-item">
+<a class="navbar-brand" href="index.html">Log Out</a>
+</li>
+</ul>
+
+  </nav>
+
+  <body>
+    <script>
+      function viewAvailability(id,toggle) {
+        if (toggle == 1) {
+          document.getElementById(id).style.visibility = "visible";
+          document.getElementById(id).style.height = "auto";
+        }
+        else {
+          document.getElementById(id).style.visibility = "hidden";
+          document.getElementById(id).style.height = 0;
+        }
+      }
+    </script>
+
+    <div class="container">
+      <div class="jumbotron">
+        <h2 class="display-4" style="text-align:center">Availability</h2>
+      </div>
+      <div class="row">
+      <div class="col-lg-7">
+      <form action="userhome.html">
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label" for="monday_status">Monday</label>
+          <div class="form-check">
+					  <input class="form-check-input" onclick="viewAvailability('monday_status', 1)" type="radio" name="mondayStatus" id="mondayStatusYes" value="Yes">
+					  <label class="form-check-label" for="mondayStatusYes">
+						  Available
+					  </label>
+					</div>
+					<div class="form-check">
+					  <input class="form-check-input" onclick="viewAvailability('monday_status', 0)" type="radio" name="mondayStatus" id="mondayStatusNo" value="No">
+					  <label class="form-check-label" for="mondayStatusNo">
+						  Not Available
+					  </label>
+          </div>
+          <div class = col-sm-6>
+            <input type="text" class="form-control" name="monday_status" id="monday_status"  placeholder="Enter Time Available">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label" for="tuesday_status">Tuesday</label>
+          <div class="form-check">
+					  <input class="form-check-input" onclick="viewAvailability('tuesday_status', 1)" type="radio" name="tuesdayStatus" id="tuesdayStatusYes" value="Yes">
+					  <label class="form-check-label" for="tuesdayStatusYes">
+						  Available
+					  </label>
+					</div>
+					<div class="form-check">
+					  <input class="form-check-input" onclick="viewAvailability('tuesday_status', 0)" type="radio" name="tuesdayStatus" id="tuesdayStatusNo" value="No">
+					  <label class="form-check-label" for="tuesdayStatusNo">
+						  Not Available
+					  </label>
+          </div>
+          <div class="col-sm-6">
+            <input type="text" class="form-control" name="tuesday_status" id="tuesday_status"  placeholder="Enter Time Available">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label" for="wednsday_status">Wednsday</label>
+          <div class="form-check">
+					  <input class="form-check-input" onclick="viewAvailability('wednsday_status', 1)" type="radio" name="wednsdayStatus" id="wednsdayStatusYes" value="Yes">
+					  <label class="form-check-label" for="wednsdayStatusYes">
+						  Available
+					  </label>
+					</div>
+					<div class="form-check">
+					  <input class="form-check-input" onclick="viewAvailability('wednsday_status', 0)" type="radio" name="wednsdayStatus" id="wednsdayStatusNo" value="No">
+					  <label class="form-check-label" for="wednsdayStatusNo">
+						  Not Available
+					  </label>
+          </div>
+          <div class="col-sm-6">
+            <input type="text" class="form-control" name="wednsday_status" id="wednsday_status"  placeholder="Enter Time Available">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label" for="thursday_status">Thursday</label>
+          <div class="form-check">
+					  <input class="form-check-input" onclick="viewAvailability('thursday_status', 1)" type="radio" name="thursdayStatus" id="thursdayStatusYes" value="Yes">
+					  <label class="form-check-label" for="thursdayStatusYes">
+						  Available
+					  </label>
+					</div>
+					<div class="form-check">
+					  <input class="form-check-input" onclick="viewAvailability('thursday_status', 0)" type="radio" name="thursdayStatus" id="thursdayStatusNo" value="No">
+					  <label class="form-check-label" for="thursdayStatusNo">
+						  Not Available
+					  </label>
+          </div>
+          <div class="col-sm-6">
+            <input type="text" class="form-control" name="thursday_status" id="thursday_status"  placeholder="Enter Time Available">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label" for="friday_status">Friday</label>
+          <div class="form-check">
+					  <input class="form-check-input" onclick="viewAvailability('friday_status', 1)" type="radio" name="fridayStatus" id="fridayStatusYes" value="Yes">
+					  <label class="form-check-label" for="fridayStatusYes">
+						  Available
+					  </label>
+					</div>
+					<div class="form-check">
+					  <input class="form-check-input" onclick="viewAvailability('friday_status', 0)" type="radio" name="fridayStatus" id="fridayStatusNo" value="No">
+					  <label class="form-check-label" for="fridayStatusNo">
+						  Not Available
+					  </label>
+          </div>
+          <div class="col-sm-6">
+            <input type="text" class="form-control" name="friday_status" id="friday_status"  placeholder="Enter Time Available">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label" for="saturday_status">Saturday</label>
+          <div class="form-check">
+					  <input class="form-check-input" onclick="viewAvailability('saturday_status', 1)" type="radio" name="saturdayStatus" id="saturdayStatusYes" value="Yes">
+					  <label class="form-check-label" for="saturdayStatusYes">
+						  Available
+					  </label>
+					</div>
+					<div class="form-check">
+					  <input class="form-check-input" onclick="viewAvailability('saturday_status', 0)" type="radio" name="saturdayStatus" id="saturdayStatusNo" value="No">
+					  <label class="form-check-label" for="saturdayStatusNo">
+						  Not Available
+					  </label>
+          </div>
+          <div class="col-sm-6">
+            <input type="text" class="form-control" name="saturday_status" id="saturday_status"  placeholder="Enter Time Available">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label" for="sunday_status">Sunday</label>
+          <div class="form-check">
+					  <input class="form-check-input" onclick="viewAvailability('sunday_status', 1)" type="radio" name="sundayStatus" id="sundayStatusYes" value="Yes">
+					  <label class="form-check-label" for="sundayStatusYes">
+						  Available
+					  </label>
+					</div>
+					<div class="form-check">
+					  <input class="form-check-input" onclick="viewAvailability('sunday_status', 0)" type="radio" name="sundayStatus" id="sundayStatusNo" value="No">
+					  <label class="form-check-label" for="sundayStatusNo">
+						  Not Available
+					  </label>
+          </div>
+          <div class="col-sm-6">
+            <input type="text" class="form-control" name="sunday_status" id="sunday_status"  placeholder="Enter Time Available">
+          </div>
+        </div>
+        <input type="submit" id="my_submit_button" value="Submit" class="btn btn-primary btn-block">
+      </form>
+      </div>
+      </div>
+    </div>
+  </body>
+</html>

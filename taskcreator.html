@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+    <html>
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="test.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="jquery-3.5.1.min.js"></script>
+        <script src="/server_scripts.js"></script>
+      </head>
+      <body>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="navbar-brand" href="userhome.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="navbar-brand" href="projecthome.html">Project Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="navbar-brand" href="taskcreator.html">Create Task</a>
+            </li>
+            <li class="nav-item">
+              <a class="navbar-brand" href="contacts.html">View Users</a>
+            </li>
+          </ul>
+            <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+      <a class="navbar-brand" href="index.html" onclick="logOut()">Log Out</a>
+    </li>
+  </ul>
+
+        </nav>
+
+        <div class="container">
+          <div>
+            <h1>Create New Task</h1>
+
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label" for="TaskName">Task Name: </label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" name="TaskName" id="TaskName"  placeholder="Enter task name">
+              </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label" for="numUsers">Number of Users: </label>
+                <div class="col-sm-10">
+                  <input type="number" class="form-control" name="numUsers" id="numUsers" min="1" placeholder="e.g. 1,2">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label" for="Deadline">Deadline: </label>
+                <div class="col-sm-10">
+                  <input type="date" class="form-control" name="Deadline" id="Deadline"  placeholder="Enter deadline date.">
+                </div>
+              </div> 
+
+            <div class="form-group">
+              <label for="TaskDescription">Task Description</label>
+              <textarea class="form-control" id="TaskDescription" rows="5"></textarea>
+            </div>
+            <br>
+
+            <input type="submit" value="Upload Task" class="btn btn-primary btn-block" onclick="createTask()">
+
+          </div>
+          <br>
+          
+        </div>
+      </body>
+    </html>
